@@ -18,7 +18,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashActivity.this, MainActivity.class)); // After running it moves to MainActivity
+                startActivity(new Intent(SplashActivity.this, LoginActivity.class)); // After running it moves to MainActivity
                 finish(); // If the back button in next activity ensures this activity is finished
             }
         }, 1000);

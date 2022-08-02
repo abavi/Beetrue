@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "781644521609",
+    "project_id": "beetrue-application",
+    "storage_bucket": "beetrue-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781644521609:android:aa210d0afec5fae63c6658",
+        "android_client_info": {
+          "package_name": "com.example.beetrueapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781644521609-hr61g98ous0mbohicn7r6emd2osthjh4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnfmihwGR_LfQHeM1w6g_RjlAHwjuPK28"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781644521609-hr61g98ous0mbohicn7r6emd2osthjh4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

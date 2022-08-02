@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="accent_color">#B8B59A</color>
     <color name="background_color">#FBED70</color>
+    <color name="button_color">#141301</color>
 </resources>

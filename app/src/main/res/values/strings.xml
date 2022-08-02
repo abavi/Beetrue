@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Beetrue Application</string>
+    <string name="content_description_logo">Logo</string>
+    <string name="login_with_beetrue_account">Login with your Beetrue account</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="button_login_text">Login</string>
+    <string name="button_signup_text">Signup</string>
+    <string name="forgot_password_text">Forgot password? Tap here.</string>
+    <string name="no_account_text">No account? Sign up for free.</string>
+    <string name="create_account_text">Create a Beetrue account for free</string>
+    <string name="already_have_account_text">Already have an account? Sign in.</string>
+    <string name="hint_first_name">First name</string>
+    <string name="hint_last_name">Last name</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_confirm_passowrd">Confirm password</string>
 </resources>
