@@ -35,7 +35,7 @@ public class DashboardActivity extends AppCompatActivity {
         notesVector.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DashboardActivity.this, NewNoteActivity.class);
+                Intent intent = new Intent(DashboardActivity.this, NotesActivity.class);
                 startActivity(intent);
             }
         });
