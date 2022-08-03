@@ -8,11 +8,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,6 +31,7 @@ public class NotesActivity extends AppCompatActivity {
     private RecyclerView notesList;
     ArrayList<Note> notes;
     NotesAdapter adapter;
+    private FloatingActionButton fabCreateNewNote;
 
     @Override
     public void onBackPressed() {
@@ -43,7 +46,17 @@ public class NotesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_notes);
 
         notesList = findViewById(R.id.notesList);
-        notesList.setLayoutManager(new LinearLayoutManager(this));
+        fabCreateNewNote = findViewById(R.id.fabCreateNewNote);
+        notesList.setLayoutManager(new GridLayoutManager(this, 2));
+
+        fabCreateNewNote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NotesActivity.this, NewNoteActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         fAuth = FirebaseAuth.getInstance();
         if(fAuth != null){
@@ -65,6 +78,7 @@ public class NotesActivity extends AppCompatActivity {
                 }
                 adapter.notifyDataSetChanged();
             }
+            
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

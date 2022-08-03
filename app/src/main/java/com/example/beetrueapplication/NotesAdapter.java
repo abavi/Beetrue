@@ -11,12 +11,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.notesViewHolder> {
     Context context;
     ArrayList<Note> list;
+
+    private String key = "";
 
     public NotesAdapter(Context context, ArrayList<Note> list){
         this.context = context;
@@ -34,6 +37,13 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.notesViewHol
     public void onBindViewHolder(@NonNull notesViewHolder holder, int position) {
         holder.noteTitle.setText(list.get(position).getNoteTitle());
         holder.noteContent.setText(list.get(position).getNoteContent());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     @Override

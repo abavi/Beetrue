@@ -1,11 +1,12 @@
 package com.example.beetrueapplication;
 
 public class Note {
-    String noteTitle, noteContent;
+    String noteTitle, noteContent, noteID;
 
-    public Note(String noteTitle, String noteContent) {
+    public Note(String noteTitle, String noteContent, String noteID) {
         this.noteTitle = noteTitle;
         this.noteContent = noteContent;
+        this.noteID = noteID;
     }
 
     public Note() {
@@ -25,5 +26,13 @@ public class Note {
 
     public void setNoteContent(String noteContent) {
         this.noteContent = noteContent;
+    }
+
+    public String getNoteID() {
+        return noteID;
+    }
+
+    public void setNoteID(String noteID) {
+        this.noteID = noteID;
     }
 }
