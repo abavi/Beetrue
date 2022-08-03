@@ -131,7 +131,6 @@ public class TimerActivity extends AppCompatActivity {
                     "%d:%02d:%02d", hours, minutes, seconds);
         } else {
             timeLeftFormatted = String.format(Locale.getDefault(),"%02d:%02d", minutes, seconds);
-
         }
 
         tvCountdown.setText(timeLeftFormatted);

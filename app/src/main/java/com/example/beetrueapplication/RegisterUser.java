@@ -69,9 +69,7 @@ public class RegisterUser extends AppCompatActivity {
         if(!isValidated){
             return;
         }
-
         createAccountInFirebase(email,password, firstName, lastName, username);
-
     }
 
     private boolean validateData(String email, String firstName, String lastName, String username, String password, String confirmPassword){

@@ -81,6 +81,7 @@ public class EditHabitActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //Toast.makeText(getApplicationContext(), taskID, Toast.LENGTH_SHORT).show();
                 updateHabit(habitID);
+                startActivity(new Intent(getApplicationContext(), HabitsActivity.class));
                 finish();
             }
         });
@@ -89,6 +90,7 @@ public class EditHabitActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 deleteHabit(habitID);
+                startActivity(new Intent(getApplicationContext(), HabitsActivity.class));
                 finish();
             }
         });

@@ -66,6 +66,7 @@ public class DashboardActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(DashboardActivity.this, NotesActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         toDoListVector.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +74,7 @@ public class DashboardActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(DashboardActivity.this, ToDoListActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         pomodoroVector.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +89,7 @@ public class DashboardActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(DashboardActivity.this, HabitsActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         btnSettings.setOnClickListener(new View.OnClickListener() {

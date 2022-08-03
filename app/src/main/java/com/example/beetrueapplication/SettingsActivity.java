@@ -10,6 +10,8 @@ import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Set;
+
 public class SettingsActivity extends AppCompatActivity {
 
     Button btnLogOut, btnChangePassword, btnChangeEmail, btnChangeUsername;
@@ -28,6 +30,37 @@ public class SettingsActivity extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
 
         btnLogOut = findViewById(R.id.btnLogOut);
+        btnChangeEmail = findViewById(R.id.btnChangeEmail);
+        btnChangePassword = findViewById(R.id.btnChangePassword);
+        btnChangeUsername = findViewById(R.id.btnChangeUsername);
+
+        //Change user password
+        btnChangePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SettingsActivity.this, ChangePasswordActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
+        //Change user email
+        btnChangeEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SettingsActivity.this, ChangeEmailActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
+        //Change username
+        btnChangeUsername.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SettingsActivity.this, ChangeUsernameActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
         //Sign user out
         btnLogOut.setOnClickListener(new View.OnClickListener() {
@@ -42,5 +75,6 @@ public class SettingsActivity extends AppCompatActivity {
 
             }
         });
+
     }
 }

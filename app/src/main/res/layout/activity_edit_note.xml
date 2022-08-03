@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    tools:context=".NewNoteActivity">
+    tools:context=".EditNoteActivity">
 
     <LinearLayout
         android:id="@+id/topPart"
@@ -20,7 +20,8 @@
             android:text="Edit or delete your note"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:padding="10dp"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"

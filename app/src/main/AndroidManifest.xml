@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BeetrueApplication">
-        <activity android:name=".EditHabitActivity"></activity>
+        <activity android:name=".ChangeUsernameActivity"></activity>
+        <activity android:name=".ChangeEmailActivity" />
+        <activity android:name=".ChangePasswordActivity" />
+        <activity android:name=".EditHabitActivity" />
         <activity android:name=".NewHabitActivity" />
         <activity android:name=".EditTaskActivity" />
         <activity android:name=".NewTaskActivity" />
