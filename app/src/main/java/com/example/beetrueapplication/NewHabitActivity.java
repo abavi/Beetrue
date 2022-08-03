@@ -59,6 +59,7 @@ public class NewHabitActivity extends AppCompatActivity {
                         etSelectDate.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
                     }
                 }, year, month, day);
+                picker.getDatePicker().setMaxDate(System.currentTimeMillis());
                 picker.show();
             }
         });

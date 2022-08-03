@@ -1,5 +1,6 @@
 package com.example.beetrueapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,12 +12,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class DashboardActivity extends AppCompatActivity {
 
+    private DatabaseReference fUsersDatabase;
+    FirebaseAuth fAuth;
     ImageView notesVector, toDoListVector, pomodoroVector, habitsVector;
     Button btnSettings;
     TextView txtWelcomeBack;
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +39,26 @@ public class DashboardActivity extends AppCompatActivity {
         habitsVector = findViewById(R.id.habitsVector);
         txtWelcomeBack = findViewById(R.id.txtWelcomeBack);
         btnSettings = findViewById(R.id.btnSettings);
+
+
+        // Display username in welcome back message
+        fAuth = FirebaseAuth.getInstance();
+        if(fAuth != null){
+            fUsersDatabase = FirebaseDatabase.getInstance().getReference().child("users").child(fAuth.getCurrentUser().getUid());
+            fUsersDatabase.child("username").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    username = snapshot.getValue(String.class);
+                    txtWelcomeBack.setText("Welcome back " + username + " !");
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+
 
         // Setting up on click listeners
         notesVector.setOnClickListener(new View.OnClickListener() {
