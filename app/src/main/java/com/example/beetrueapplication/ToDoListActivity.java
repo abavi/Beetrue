@@ -31,6 +31,13 @@ public class ToDoListActivity extends AppCompatActivity {
     FloatingActionButton fabCreateTask;
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(ToDoListActivity.this, DashboardActivity.class));
+        finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_do_list);

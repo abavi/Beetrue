@@ -57,7 +57,6 @@ public class NewTaskActivity extends AppCompatActivity {
 
     private void createTask(String taskContent){
         if(fAuth.getCurrentUser() != null ){
-
             // Create references for each note
             DatabaseReference newTaskRef = fTasksDatabase.push();
             String taskID = newTaskRef.getKey();

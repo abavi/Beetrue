@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".NewHabitActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create your new habit"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_marginBottom="10dp"/>
+        <EditText
+            android:id="@+id/etHabitContent"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Type habit here..."
+            android:padding="10dp"
+            android:background="@color/accent_color"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="30dp"
+            android:inputType="textMultiLine"
+
+            />
+
+        <EditText
+            android:id="@+id/etSelectDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/accent_color"
+            android:textColor="@color/black"
+            android:hint="Select date"
+            android:drawableLeft="@drawable/ic_baseline_calendar_today_24"
+            android:layout_gravity="center"
+            android:focusable="false"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabSaveHabit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="15dp"
+            android:clickable="true"
+            app:srcCompat="@drawable/ic_baseline_save_24"
+            android:backgroundTint="@color/accent_color"/>
+
+
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
