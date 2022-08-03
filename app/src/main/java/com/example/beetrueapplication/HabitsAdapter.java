@@ -11,7 +11,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class HabitsAdapter extends RecyclerView.Adapter<HabitsAdapter.habitsViewHolder> {
     private Context context;
@@ -32,7 +36,22 @@ public class HabitsAdapter extends RecyclerView.Adapter<HabitsAdapter.habitsView
     @Override
     public void onBindViewHolder(@NonNull habitsViewHolder holder, int position) {
         holder.habitContent.setText(list.get(position).getHabitContent());
-        holder.habitDate.setText(list.get(position).getHabitDate());
+        holder.habitDate.setText("From: " + list.get(position).getHabitDate());
+        holder.totalDays.setText(calculateDays(list.get(position).getHabitDate()) + " Days");
+    }
+
+    // Calculate total days of habit
+    public String calculateDays(String habitDate) {
+
+        Date convertedHabitDate = null;
+        try {
+            convertedHabitDate = new SimpleDateFormat("dd/MM/yyyy").parse(habitDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return String.valueOf(TimeUnit.DAYS.convert(new Date().getTime() - convertedHabitDate.getTime(), TimeUnit.MILLISECONDS));
+
     }
 
     @Override
@@ -46,12 +65,13 @@ public class HabitsAdapter extends RecyclerView.Adapter<HabitsAdapter.habitsView
             super(itemView);
             habitContent = itemView.findViewById(R.id.habitContent);
             habitDate = itemView.findViewById(R.id.fromDate);
+            totalDays = itemView.findViewById(R.id.totalDays);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
+                public void onClick(View v) { // On click functionality for each element in the recyclerView
                     HabitModel habit = list.get(getBindingAdapterPosition());
                     Intent i = new Intent(context, EditHabitActivity.class);
-                    Toast.makeText(context, habit.habitID, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(context, habit.habitID, Toast.LENGTH_SHORT).show();
                     i.putExtra("content", habit.habitContent);
                     i.putExtra("date", habit.habitDate);
                     i.putExtra("habitID", habit.habitID);

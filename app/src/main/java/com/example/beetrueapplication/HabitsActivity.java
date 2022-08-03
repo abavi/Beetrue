@@ -57,7 +57,6 @@ public class HabitsActivity extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         if(fAuth != null){
             fHabitDatabase = FirebaseDatabase.getInstance().getReference().child("habits").child(fAuth.getCurrentUser().getUid());
-
         }
 
         habits = new ArrayList<>();
