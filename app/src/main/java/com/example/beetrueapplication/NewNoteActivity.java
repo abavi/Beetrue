@@ -45,7 +45,7 @@ public class NewNoteActivity extends AppCompatActivity {
 
                 if(!TextUtils.isEmpty(noteTitle) && !TextUtils.isEmpty(noteContent)){
                     String noteID = fNotesDatabase.push().getKey();
-                    createNote(noteTitle, noteContent, noteID);
+                    createNote(noteTitle, noteContent);
                 }
                 else {
                     Snackbar.make(v,"Fill empty fields", Snackbar.LENGTH_SHORT).show();
@@ -55,12 +55,12 @@ public class NewNoteActivity extends AppCompatActivity {
         });
     }
 
-    private void createNote(String noteTitle, String noteContent, String noteID){
+    private void createNote(String noteTitle, String noteContent){
         if(fAuth.getCurrentUser() != null ){
 
             // Create references for each note
             DatabaseReference newNoteRef = fNotesDatabase.push();
-            noteID = newNoteRef.getKey();
+            String noteID = newNoteRef.getKey();
             Note note = new Note(noteTitle, noteContent, noteID);
 
             newNoteRef.setValue(note).addOnCompleteListener(new OnCompleteListener<Void>() {
