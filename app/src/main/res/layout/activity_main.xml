@@ -80,14 +80,6 @@
             android:layout_marginHorizontal="75dp"
             android:backgroundTint="@color/button_color"
             />
-
-        <TextView
-            android:id="@+id/txtForgotPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/forgot_password_text"
-            android:gravity="center"/>
-
         <TextView
             android:id="@+id/txtNoAccount"
             android:layout_width="match_parent"
