@@ -1,4 +1,5 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,9 +8,8 @@
     tools:context=".NewNoteActivity">
 
     <LinearLayout
-        android:id="@+id/topPart"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_marginTop="50dp"
         >
@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Edit or delete your note"
+            android:text="Edit your task"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="20sp"/>
@@ -27,36 +27,20 @@
             android:background="@color/black"
             android:layout_marginBottom="10dp"/>
         <EditText
-            android:id="@+id/etEditNoteTitle"
+            android:id="@+id/etEditTaskContent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Type your title here..."
+            android:layout_height="50dp"
+            android:hint="Type task here..."
             android:padding="10dp"
             android:background="@color/accent_color"
             android:layout_marginHorizontal="5dp"
-            android:layout_marginTop="5dp"
-            />
-
-        <EditText
-            android:id="@+id/etEditNoteContent"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginHorizontal="5dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="50dp"
-            android:layout_weight="1"
-            android:background="@color/accent_color"
-            android:ems="10"
-            android:gravity="start"
-            android:hint="Type your note here..."
+            android:layout_marginTop="30dp"
             android:inputType="textMultiLine"
-            android:padding="10dp" />
-
+            />
         <Button
-            android:id="@+id/btnSaveEditNote"
+            android:id="@+id/btnSaveEditTask"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginHorizontal="50dp"
             android:backgroundTint="@color/accent_color"
             android:textColor="@color/black"
@@ -65,10 +49,9 @@
             android:layout_gravity="center"
             />
         <Button
-            android:id="@+id/btnDeleteEditedNote"
+            android:id="@+id/btnDeleteEditedTask"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginHorizontal="50dp"
             android:backgroundTint="@color/accent_color"
             android:textColor="@color/black"
@@ -76,6 +59,6 @@
             android:drawableLeft="@drawable/ic_baseline_delete_24"
             android:layout_gravity="center"
             />
-    </LinearLayout>
 
-</RelativeLayout>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

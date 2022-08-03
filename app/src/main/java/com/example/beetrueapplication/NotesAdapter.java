@@ -58,7 +58,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.notesViewHol
                 public void onClick(View v) {
                     Note note = list.get(getBindingAdapterPosition());
                     Intent i = new Intent(context, EditNoteActivity.class);
-                    Toast.makeText(context, note.noteID, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(context, note.noteID, Toast.LENGTH_SHORT).show();
                     i.putExtra("title", note.noteTitle);
                     i.putExtra("content", note.noteContent);
                     i.putExtra("noteID", note.noteID);

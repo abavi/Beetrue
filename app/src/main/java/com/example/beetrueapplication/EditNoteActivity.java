@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -23,7 +24,7 @@ public class EditNoteActivity extends AppCompatActivity {
     String noteTitleSend, noteContentSend;
     private DatabaseReference fNoteReference;
     private Note note;
-    FloatingActionButton fabDeleteNote, fabUpdateNote;
+    Button btnDeleteNote, btnUpdateNote;
     private FirebaseAuth fAuth;
 
     @Override
@@ -33,8 +34,9 @@ public class EditNoteActivity extends AppCompatActivity {
 
         fAuth = FirebaseAuth.getInstance();
 
-        fabDeleteNote = findViewById(R.id.fabDeleteEditedNote);
-        fabUpdateNote = findViewById(R.id.fabSaveEditedNote);
+        btnDeleteNote = findViewById(R.id.btnDeleteEditedNote);
+        btnUpdateNote = findViewById(R.id.btnSaveEditNote);
+
         final Intent i = getIntent();
 
         String getNoteTitle = i.getStringExtra("title");
@@ -47,17 +49,17 @@ public class EditNoteActivity extends AppCompatActivity {
         noteTitle.setText(getNoteTitle);
         noteContent.setText(getNoteContent);
 
-        fabUpdateNote.setOnClickListener(new View.OnClickListener() {
+        btnUpdateNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), noteID, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), noteID, Toast.LENGTH_SHORT).show();
                 updateNotes(noteID);
             }
         });
-        fabDeleteNote.setOnClickListener(new View.OnClickListener() {
+        btnDeleteNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), noteID, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), noteID, Toast.LENGTH_SHORT).show();
                 deleteNote(noteID);
             }
         });
@@ -86,7 +88,7 @@ public class EditNoteActivity extends AppCompatActivity {
         fNoteReference.child(noteID).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Toast.makeText(EditNoteActivity.this, "Note updated!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EditNoteActivity.this, "Note deleted!", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(), NotesActivity.class));
                 finish();
             }

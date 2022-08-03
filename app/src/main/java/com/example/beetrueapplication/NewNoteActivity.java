@@ -3,6 +3,7 @@ package com.example.beetrueapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -68,6 +69,7 @@ public class NewNoteActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()){
                         Toast.makeText(NewNoteActivity.this, "Note added to the database!", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(NewNoteActivity.this, DashboardActivity.class));
                         finish();
                     }
                     else {
