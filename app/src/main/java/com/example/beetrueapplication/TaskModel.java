@@ -2,6 +2,8 @@ package com.example.beetrueapplication;
 
 public class TaskModel {
 
+    // Model class for the Task object
+
     String taskContent, taskID;
 
     public TaskModel() {

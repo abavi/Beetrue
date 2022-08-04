@@ -2,6 +2,8 @@ package com.example.beetrueapplication;
 
 public class User {
 
+    // Model class for the User object
+
     public String firstName, lastName, username;
 
     public User() {

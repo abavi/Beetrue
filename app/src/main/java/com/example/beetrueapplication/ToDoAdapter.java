@@ -27,13 +27,13 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.tasksViewHolde
     @NonNull
     @Override
     public tasksViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.single_task_layout, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.single_task_layout, parent, false); // Inflate layout with single task layout
         return new tasksViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull tasksViewHolder holder, int position) {
-        holder.taskContent.setText(list.get(position).getTaskContent());
+        holder.taskContent.setText(list.get(position).getTaskContent()); // Set content
     }
 
     @Override
@@ -47,13 +47,13 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.tasksViewHolde
         public tasksViewHolder(@NonNull View itemView){
             super(itemView);
             taskContent = itemView.findViewById(R.id.noteContent);
-            itemView.setOnClickListener(new View.OnClickListener() {
+            itemView.setOnClickListener(new View.OnClickListener() { // Create clickable elements
                 @Override
                 public void onClick(View v) {
                     TaskModel task = list.get(getBindingAdapterPosition());
                     Intent i = new Intent(context, EditTaskActivity.class);
                     //Toast.makeText(context, task.taskID, Toast.LENGTH_SHORT).show();
-                    i.putExtra("content", task.taskContent);
+                    i.putExtra("content", task.taskContent); // Send the content and the task ID to allow retrieval
                     i.putExtra("taskID", task.taskID);
                     context.startActivity(i);
                 }

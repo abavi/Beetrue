@@ -1,6 +1,9 @@
 package com.example.beetrueapplication;
 
 public class Note {
+
+    // Model class of the Note object
+
     String noteTitle, noteContent, noteID;
 
     public Note(String noteTitle, String noteContent, String noteID) {

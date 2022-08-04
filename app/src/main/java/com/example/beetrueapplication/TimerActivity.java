@@ -40,7 +40,7 @@ public class TimerActivity extends AppCompatActivity {
 
         btnSetTimer.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { // Validate the time input
                 String input = etSetTimer.getText().toString();
                 if (input.length() == 0) {
                     Toast.makeText(TimerActivity.this, "Field can not be empty!", Toast.LENGTH_SHORT).show();
@@ -128,7 +128,7 @@ public class TimerActivity extends AppCompatActivity {
         String timeLeftFormatted;
         if(hours > 0) {
             timeLeftFormatted = String.format(Locale.getDefault(),
-                    "%d:%02d:%02d", hours, minutes, seconds);
+                    "%d:%02d:%02d", hours, minutes, seconds); // Change display format for lengths of 1 hour or over
         } else {
             timeLeftFormatted = String.format(Locale.getDefault(),"%02d:%02d", minutes, seconds);
         }

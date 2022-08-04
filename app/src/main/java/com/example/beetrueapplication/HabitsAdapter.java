@@ -37,7 +37,7 @@ public class HabitsAdapter extends RecyclerView.Adapter<HabitsAdapter.habitsView
     public void onBindViewHolder(@NonNull habitsViewHolder holder, int position) {
         holder.habitContent.setText(list.get(position).getHabitContent());
         holder.habitDate.setText("From: " + list.get(position).getHabitDate());
-        holder.totalDays.setText(calculateDays(list.get(position).getHabitDate()) + " Days");
+        holder.totalDays.setText(calculateDays(list.get(position).getHabitDate()) + " Days"); // Total days displayed in card form
     }
 
     // Calculate total days of habit
