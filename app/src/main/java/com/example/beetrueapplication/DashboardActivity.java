@@ -20,12 +20,18 @@ import com.google.firebase.database.ValueEventListener;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    private DatabaseReference fUsersDatabase;
+    DatabaseReference fUsersDatabase;
     FirebaseAuth fAuth;
     ImageView notesVector, toDoListVector, pomodoroVector, habitsVector;
     Button btnSettings;
     TextView txtWelcomeBack;
     String username;
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,7 +103,6 @@ public class DashboardActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(DashboardActivity.this, SettingsActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
 

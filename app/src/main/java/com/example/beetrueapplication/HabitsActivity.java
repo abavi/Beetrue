@@ -66,6 +66,7 @@ public class HabitsActivity extends AppCompatActivity {
         fHabitDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                habits.clear();
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     HabitModel habit = dataSnapshot.getValue(HabitModel.class);
                     habits.add(habit);

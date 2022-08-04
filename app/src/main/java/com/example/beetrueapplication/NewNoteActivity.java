@@ -69,7 +69,7 @@ public class NewNoteActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()){
                         Toast.makeText(NewNoteActivity.this, "Note added to the database!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(NewNoteActivity.this, DashboardActivity.class));
+                        startActivity(new Intent(NewNoteActivity.this, NotesActivity.class));
                         finish();
                     }
                     else {

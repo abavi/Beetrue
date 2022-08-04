@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Beetrue Application</string>
+    <string name="app_name">Beetrue</string>
     <string name="content_description_logo">Logo</string>
     <string name="login_with_beetrue_account">Login with your Beetrue account</string>
     <string name="hint_email">Email</string>

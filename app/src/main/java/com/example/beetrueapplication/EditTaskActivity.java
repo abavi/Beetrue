@@ -50,7 +50,7 @@ public class EditTaskActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //Toast.makeText(getApplicationContext(), taskID, Toast.LENGTH_SHORT).show();
                 updateTasks(taskID);
-                finish();
+                //finish();
             }
         });
 
@@ -58,7 +58,7 @@ public class EditTaskActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 deleteTask(taskID);
-                finish();
+                //finish();
             }
         });
     }
@@ -71,7 +71,7 @@ public class EditTaskActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 Toast.makeText(EditTaskActivity.this, "Task updated!", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), ToDoListActivity.class));
+                //startActivity(new Intent(getApplicationContext(), ToDoListActivity.class));
                 finish();
             }
         });
@@ -84,7 +84,7 @@ public class EditTaskActivity extends AppCompatActivity {
             @Override
             public void onSuccess(Void aVoid) {
                 Toast.makeText(EditTaskActivity.this, "Task deleted!", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), ToDoListActivity.class));
+                //startActivity(new Intent(getApplicationContext(), ToDoListActivity.class));
                 finish();
             }
         });

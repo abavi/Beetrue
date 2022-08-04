@@ -32,6 +32,13 @@ public class NewHabitActivity extends AppCompatActivity {
     private DatabaseReference fHabitsDatabase;
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(NewHabitActivity.this, DashboardActivity.class));
+        finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_habit);
@@ -70,7 +77,6 @@ public class NewHabitActivity extends AppCompatActivity {
                 String habitContent = etHabitContent.getText().toString().trim();
                 String habitDate = etSelectDate.getText().toString().trim();
 
-
                 if(!TextUtils.isEmpty(habitContent)){
                     String taskID = fHabitsDatabase.push().getKey();
                     createHabit(habitContent, habitDate);
@@ -95,7 +101,7 @@ public class NewHabitActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()){
                         Toast.makeText(NewHabitActivity.this, "Habit added to the database!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(NewHabitActivity.this, DashboardActivity.class));
+                        startActivity(new Intent(NewHabitActivity.this, HabitsActivity.class));
                         finish();
                     }
                     else {

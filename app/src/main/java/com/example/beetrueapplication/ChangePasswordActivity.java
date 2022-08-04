@@ -23,6 +23,14 @@ public class ChangePasswordActivity extends AppCompatActivity {
     FirebaseUser user;
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(ChangePasswordActivity.this, SettingsActivity.class);
+        startActivity(i);
+        finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_password);

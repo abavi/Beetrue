@@ -17,10 +17,6 @@ public class SettingsActivity extends AppCompatActivity {
     Button btnLogOut, btnChangePassword, btnChangeEmail, btnChangeUsername;
     FirebaseAuth fAuth;
 
-    @Override
-    public void onBackPressed() {
-        finish();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,9 +64,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(fAuth != null){
                     fAuth.signOut();
-                    Intent i = new Intent(SettingsActivity.this, LoginActivity.class); // Send user back to login activity
-                    startActivity(i);
-                    finish(); // Ensure on back press user is out of the application
+                    finishAffinity();// Ensure user is out of the application
                 }
 
             }

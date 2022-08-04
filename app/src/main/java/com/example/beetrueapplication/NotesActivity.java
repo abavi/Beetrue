@@ -72,6 +72,7 @@ public class NotesActivity extends AppCompatActivity {
         fNotesDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                notes.clear();
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     Note note = dataSnapshot.getValue(Note.class);
                     notes.add(note);

@@ -24,6 +24,13 @@ public class ChangeEmailActivity extends AppCompatActivity {
     FirebaseUser user;
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(ChangeEmailActivity.this, SettingsActivity.class);
+        startActivity(i);
+        finish();
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_email);

@@ -67,7 +67,7 @@ public class NewTaskActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()){
                         Toast.makeText(NewTaskActivity.this, "Task added to the database!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(NewTaskActivity.this, DashboardActivity.class));
+                        startActivity(new Intent(NewTaskActivity.this, ToDoListActivity.class));
                         finish();
                     }
                     else {

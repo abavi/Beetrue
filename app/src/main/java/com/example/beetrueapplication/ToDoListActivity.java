@@ -70,6 +70,7 @@ public class ToDoListActivity extends AppCompatActivity {
         fTasksDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                tasks.clear();
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     TaskModel task = dataSnapshot.getValue(TaskModel.class);
                     tasks.add(task);
