@@ -1,5 +1,5 @@
 # Beetrue
-
+![logo](app/src/main/res/drawable-v24/logo.png)
 # All-in-one Productivity App
 
 This is a productivity app developed for Android devices using Java programming language in Android Studio. The app is designed to help users organize their tasks, set reminders, and track their habits all in one place. 
